@@ -33,6 +33,7 @@
                         
                         <li class="nav-item"><a class="nav-link" href="#team">Team</a></li-->
                         <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link btn btn-success" href="https://wa.me/+51936441860" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Envianos un mensaje de WhatsApp"><i class="fab fa-whatsapp-square" style="font-size: 16px;"></i> Escríbenos</a></li>
                     </ul>
                 </div>
             </div>
@@ -290,64 +291,89 @@
         <section class="page-section" id="contact">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Contactenos</h2>
+                    <h2 class="section-heading text-uppercase">Contáctenos</h2>
                     <h3 class="section-subheading text-muted">Estamos a su servicio</h3>
                 </div>
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- * * SB Forms Contact Form * *-->
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- This form is pre-integrated with SB Forms.-->
-                <!-- To make this form functional, sign up at-->
-                <!-- https://startbootstrap.com/solution/contact-forms-->
-                <!-- to get an API token!-->
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                    <div class="row align-items-stretch mb-5">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <!-- Name input-->
-                                <input class="form-control" id="name" type="text" placeholder="Nombre" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- * * SB Forms Contact Form * *-->
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- This form is pre-integrated with SB Forms.-->
+                        <!-- To make this form functional, sign up at-->
+                        <!-- https://startbootstrap.com/solution/contact-forms-->
+                        <!-- to get an API token!-->
+                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <div class="row align-items-stretch mb-5">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <!-- Name input-->
+                                        <input class="form-control" id="name" type="text" placeholder="Nombre" data-sb-validations="required" />
+                                        <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                    </div>
+                                    <div class="form-group">
+                                        <!-- Email address input-->
+                                        <input class="form-control" id="email" type="email" placeholder="Correo Electrónico" data-sb-validations="required,email" />
+                                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                                    </div>
+                                    <div class="form-group mb-md-0">
+                                        <!-- Phone number input-->
+                                        <input class="form-control" id="phone" type="tel" placeholder="Telefono" data-sb-validations="required" />
+                                        <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-group-textarea mb-md-0">
+                                        <!-- Message input-->
+                                        <textarea class="form-control" id="message" placeholder="Aqui tu mensaje" data-sb-validations="required"></textarea>
+                                        <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <!-- Email address input-->
-                                <input class="form-control" id="email" type="email" placeholder="Correo Electrónico" data-sb-validations="required,email" />
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                            <!-- Submit success message-->
+                            <!---->
+                            <!-- This is what your users will see when the form-->
+                            <!-- has successfully submitted-->
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center text-white mb-3">
+                                    <div class="fw-bolder">Form submission successful!</div>
+                                    To activate this form, sign up at
+                                    <br />
+                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                </div>
                             </div>
-                            <div class="form-group mb-md-0">
-                                <!-- Phone number input-->
-                                <input class="form-control" id="phone" type="tel" placeholder="Telefono" data-sb-validations="required" />
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group form-group-textarea mb-md-0">
-                                <!-- Message input-->
-                                <textarea class="form-control" id="message" placeholder="Aqui tu mensaje" data-sb-validations="required"></textarea>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                            <!-- Submit error message-->
+                            <!---->
+                            <!-- This is what your users will see when there is-->
+                            <!-- an error submitting the form-->
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                            <!-- Submit Button-->
+                            <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Enviar Mensaje</button></div>
+                        </form>
+                    </div>
+                    <div class="col-12 col-lg-6 pt-5 pt-lg-0">
+                        <div class="card">
+                            <div class="card-body">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.6625847136547!2d-76.97378075864658!3d-12.066720885351053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c65b91b1efdd%3A0xa2944cf1c0340e4c!2sIndustrias%20Sivall!5e0!3m2!1ses-419!2spe!4v1642512597625!5m2!1ses-419!2spe" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                             </div>
                         </div>
                     </div>
-                    <!-- Submit success message-->
-                    <!---->
-                    <!-- This is what your users will see when the form-->
-                    <!-- has successfully submitted-->
-                    <div class="d-none" id="submitSuccessMessage">
-                        <div class="text-center text-white mb-3">
-                            <div class="fw-bolder">Form submission successful!</div>
-                            To activate this form, sign up at
-                            <br />
-                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                        </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <p class="text-white text-center mt-4">
+                            (ubicación) Lima: (dirección) (teléfono) Central: +511 326 3358 (correo) xxx@sivall.pe  (creación de correo – Ejemplo. ventas@sivall.pe )
+                        </p>
+                        <p class="text-white text-center mt-4">
+                            (ubicación) Lima: (dirección) (teléfono) Central: +511 326 3358 (correo) xxx@sivall.pe  (creación de correo – Ejemplo. ventas@sivall.pe )
+                        </p>
                     </div>
-                    <!-- Submit error message-->
-                    <!---->
-                    <!-- This is what your users will see when there is-->
-                    <!-- an error submitting the form-->
-                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                    <!-- Submit Button-->
-                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Enviar Mensaje</button></div>
-                </form>
+                </div>
+
+                
             </div>
         </section>
         <!-- Footer-->
@@ -587,5 +613,10 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script>
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
+        </script>       
     </body>
 </html>
